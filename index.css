@@ -1,14 +1,42 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto;
+}
+
 .schitte-nav {
-  background-color: #f1f1f1;
+  background-color: #696969;
+  text-align: center;
 }
 
 .schitte-nav-logo {
   content:url("Logo Long.png");
+  max-width: 60vw;
+  max-height: 30vh;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
 .schitte-nav-title {
   text-align: center;
 }
 
+.schitte-nav-buttons {
+}
+
 .schitte-nav-button {
+  font-family: Roboto;
+  font-size: 1.5em;
+  background-color: #ffffff;
+  color: #5B3305;
+  border: none;
+  cursor: pointer;
+}
+
+.schitte-nav-button:hover {
+  background-color: #f1f1f1;
+  box-shadow: 0px 4px 2px;
+  
 }
