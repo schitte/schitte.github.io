@@ -40,3 +40,26 @@ html, body {
   box-shadow: 0px 4px 2px;
   
 }
+
+.schitte-gallery {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  text-align: center;
+}
+
+.schitte-gallery-item {
+  display: inline-block;
+  position: relative;
+  background-color: #f1f1f1;
+  width: 25vw;
+}
+
+.schitte-gallery-img {
+  width: 25vw;
+}
+
+.schitte-gallery-overlay {
+  position: absolute;
+  width: 25vw;
+  cursor: pointer;
+}
