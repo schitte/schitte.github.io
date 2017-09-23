@@ -12,6 +12,7 @@ var buildContent = function(vnode) {
   console.log(vnode);
   //main episodes
   vnode.attrs.main.reduceRight(function(title) {
+      console.log('main reduce');
       arr.push(m("img.schitte-gallery-overlay", {
           src: "episodes/" + title + ".png",
           id: vnode.attrs.id + "main" + title,
@@ -19,6 +20,7 @@ var buildContent = function(vnode) {
       }));
   });
 
+  console.log("removeEL(\'" + vnode.attrs.id + "title" + "\')");
   //title
   arr.push(m("img.schitte-gallery-overlay", {
       src: "title.png",
