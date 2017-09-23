@@ -9,7 +9,7 @@
 //  main(array[string]): episode title string e.g. "S1E1"
 var moduleGallery = {
   view: function(vnode) {
-      return m("a.schitte-gallery-item", [
+      return m("a.schitte-gallery-item",
         function() {
             var arr = [];
             
@@ -76,9 +76,6 @@ var moduleGallery = {
             
             return arr;
         }
-      ]);
-  },
-  test: function() {
-      console.log('moduleGallery test');
+      );
   }
 }
