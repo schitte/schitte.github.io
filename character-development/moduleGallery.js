@@ -8,52 +8,52 @@
 //  previous(array[string]): episode title string e.g. "S1E1"
 //  main(array[string]): episode title string e.g. "S1E1"
 var moduleGallery = {
-  view: function(config) {
+  view: function(vnode) {
       return m("a.schitte-gallery-item", [
         function() {
             var arr = [];
             
             //main episodes
-            config.main.reduceRight(function(title) {
+            vnode.attrs.main.reduceRight(function(title) {
                 arr.push(m("img.schitte-gallery-overlay", {
                     src: "episodes/" + title + ".png",
-                    id: config.id + "main" + title,
-                    onclick: "removeEL(\'" + config.id + "main" + title + "\')"
+                    id: vnode.attrs.id + "main" + title,
+                    onclick: "removeEL(\'" + vnode.attrs.id + "main" + title + "\')"
                 }));
             });
         
             //title
             arr.push(m("img.schitte-gallery-overlay", {
                 src: "title.png",
-                id: config.id + "title",
-                onclick: "removeEL(\'" + config.id + "title" + "\')"
+                id: vnode.attrs.id + "title",
+                onclick: "removeEL(\'" + vnode.attrs.id + "title" + "\')"
             }));
         
             //presents
             arr.push(m("img.schitte-gallery-overlay", {
                 src: "presents.png",
-                id: config.id + "presents",
-                onclick: "removeEL(\'" + config.id + "presents" + "\')"
+                id: vnode.attrs.id + "presents",
+                onclick: "removeEL(\'" + vnode.attrs.id + "presents" + "\')"
             }));
             
-            if(!config.premier) {
+            if(!vnode.attrs.premier) {
                 //previous
-                config.main.reduceRight(function(title) {
+                vnode.attrs.main.reduceRight(function(title) {
                     arr.push(m("img.schitte-gallery-overlay", {
                         src: "episodes/" + title + ".png",
-                        id: config.id + "main" + title,
-                        onclick: "removeEL(\'" + config.id + "main" + title + "\')"
+                        id: vnode.attrs.id + "main" + title,
+                        onclick: "removeEL(\'" + vnode.attrs.id + "main" + title + "\')"
                     }));
                 });
                 //previously
                 arr.push(m("img.schitte-gallery-overlay", {
                     src: "presents.png",
-                    id: config.id + "presents",
-                    onclick: "removeEL(\'" + config.id + "presents" + "\')"
+                    id: vnode.attrs.id + "presents",
+                    onclick: "removeEL(\'" + vnode.attrs.id + "presents" + "\')"
                 }));
             }
             
-            if(config.soon) {
+            if(vnode.attrs.soon) {
                 //soon
                 arr.push(m("img.schitte-gallery-overlay", {
                     src: "soon.png"
@@ -69,10 +69,10 @@ var moduleGallery = {
             arr.push("p.schitte-gallery-title", "Schitte Character Development");
             
             //episode title
-            arr.push("p", config.title);
+            arr.push("p", vnode.attrs.title);
             
             //release date
-            arr.push("p", config.release);
+            arr.push("p", vnode.attrs.release);
             
             return arr;
         }
