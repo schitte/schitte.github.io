@@ -7,8 +7,8 @@
 //  premier(bool): true for first episode. disables previous. 
 //  previous(array[string]): episode title string e.g. "S1E1"
 //  main(array[string]): episode title string e.g. "S1E1"
-var moduleGallery(config) = {
-  view: function() {
+var moduleGallery = {
+  view: function(config) {
       return m("a.schitte-gallery-item", [
         function() {
             var arr = [];
