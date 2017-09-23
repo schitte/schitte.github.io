@@ -1,5 +1,5 @@
 var moduleNav = {
-  return m("div.schitte-nav", [
+  view: return m("div.schitte-nav", [
     m("img.schitte-nav-logo"),
     m("span.schitte-nav-title"),
     m("div.schitte-nav-buttons", [
