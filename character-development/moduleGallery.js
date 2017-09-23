@@ -11,7 +11,7 @@ var buildContent = function(vnode) {
   var arr = [];
   console.log(vnode);
   //main episodes
-  vnode.attrs.main.reduceRight(function(title) {
+  vnode.attrs.main.reverse().map(function(title) {
       console.log('main reduce');
       arr.push(m("img.schitte-gallery-overlay", {
           src: "episodes/" + title + ".png",
@@ -37,7 +37,7 @@ var buildContent = function(vnode) {
 
   if(!vnode.attrs.premier) {
       //previous
-      vnode.attrs.main.reduceRight(function(title) {
+      vnode.attrs.previous.reverse().map(function(title) {
           arr.push(m("img.schitte-gallery-overlay", {
               src: "episodes/" + title + ".png",
               id: vnode.attrs.id + "main" + title,
