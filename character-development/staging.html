@@ -1,0 +1,46 @@
+
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="https://schitte.github.io/index.css" />
+</head>
+<body>
+  <script src="https://cdn.rawgit.com/MithrilJS/mithril.js/master/mithril.js"></script>
+  <script src="https://schitte.github.io/module/moduleNav.js"></script>
+  <script src="https://schitte.github.io/index.js"></script>
+  <script src="https://schitte.github.io/character-development/moduleGallery.js"></script>
+  <script>
+    m.render(document.body, [
+      m(moduleNav),
+      m("div.schitte-gallery", [
+        m(moduleGallery, {
+          id: "S1E1",
+          title: "Season 1 Episode 1",
+          release: "Released: 2017-09-17",
+          soon: false,
+          premier: true,
+          previous: null,
+          main: ["S1E1"]
+        }),
+        m(moduleGallery, {
+          id: "S1E1",
+          title: "Season 1 Episode 1",
+          release: "Released: 2017-09-17",
+          soon: false,
+          premier: true,
+          previous: null,
+          main: ["S1E1"]
+        }),
+        m(moduleGallery, {
+          id: "S1E1",
+          title: "Season 1 Episode 1",
+          release: "Released: 2017-09-17",
+          soon: false,
+          premier: true,
+          previous: null,
+          main: ["S1E1"]
+        })
+      ])
+    ]);
+  </script>
+</body>
+</html>
