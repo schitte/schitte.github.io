@@ -9,7 +9,7 @@
 //  main(array[string]): episode title string e.g. "S1E1"
 var buildContent = function(vnode) {
   var arr = [];
-
+  console.log(vnode);
   //main episodes
   vnode.attrs.main.reduceRight(function(title) {
       arr.push(m("img.schitte-gallery-overlay", {
