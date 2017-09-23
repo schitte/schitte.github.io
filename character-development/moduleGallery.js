@@ -63,13 +63,13 @@ var buildContent = function(vnode) {
   }));
 
   //title
-  arr.push("p.schitte-gallery-title", "Schitte Character Development");
+  arr.push(m("p.schitte-gallery-title", "Schitte Character Development"));
 
   //episode title
-  arr.push("p", vnode.attrs.title);
+  arr.push(m("p", vnode.attrs.title));
 
   //release date
-  arr.push("p", vnode.attrs.release);
+  arr.push(m("p", vnode.attrs.release));
 
   console.log(arr);
   return arr;
