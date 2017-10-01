@@ -53,6 +53,13 @@
       schitteMessage += " moons!";
       document.getElemenyById("schitte-planet-name").innerHTML = schitteMessage;
     }
+    
+    var schitteExploration = setInterval(function() {
+      var schitteFind = currentSchittePlanet + " ";
+      schitteFind += possibleSchitteFinds[Math.floor(8*Math.random())];
+    }, 1000);
+    
+    schitteExploration();
   </script>
 </body>
 </html>
