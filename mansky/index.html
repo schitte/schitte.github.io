@@ -21,7 +21,7 @@
     <h3>Procedurally Generated Universe</h3>
   </div>
   <div>
-    <p id="schitte-planet-name>Welcome to Earth. Click the button below to start your travel</p>
+    <p id="schitte-planet-name">Welcome to Earth. Click the button below to start your travel</p>
     <span>While exploring, you came across:</span><span id="schitte-planet-find"></span>
     <button onclick="jump">Travel to a new cool planet</button>
   </div>
@@ -32,7 +32,7 @@
   <script>
     var currentSchittePlanet = "Earth";
     var possibleSchitteFinds = ["Rock", "Cow", "Bird", "Tree", "Cloud", "Grass", "Building"];
-    var SchitteCharacteristic1 = ["Freezing", "Cold, "Cool", "Temperate", "Lukewarm", "Warm", "Hot", "Burning"];
+    var SchitteCharacteristic1 = ["Freezing", "Cold", "Cool", "Temperate", "Lukewarm", "Warm", "Hot", "Burning"];
     var SchitteCharacteristic2 = ["Microscopic", "Miniscule", "Tiny", "Small", "Big", "Large", "Huge", "Enormous"];
     //0~2^16-1 possible moons
     
@@ -43,7 +43,15 @@
       for(var i=0; i < 13; i++) {
         currentSchittePlanet += Number(Math.floor(Math.random()*36)).toString(36);
       }
-      document.getElemenyById("schitte-planet-name").innerHTML = "Welcome to " + currentSchittePlanet + "!";
+      var schitteMessage = "Welcome to " + currentSchittePlanet + ", a ";
+      //Characteristics
+      schitteMessage += SchitteCharacteristic1[Math.floor(8*Math.random())];
+      schitteMessage += " ";
+      schitteMessage += SchitteCharacteristic2[Math.floor(8*Math.random())];
+      schitteMessage += " planet with ";
+      schitteMessage += Math.floor(6969*Math.random());
+      schitteMessage += " moons!";
+      document.getElemenyById("schitte-planet-name").innerHTML = schitteMessage;
     }
   </script>
 </body>
