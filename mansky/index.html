@@ -15,6 +15,7 @@
       <button class="schitte-nav-button" onclick="window.open('https://sites.google.com/view/schitteindustries/disclaimer','_blank')">Disclaimer</button>
     </div>
   </div>
+  <hr />
   <div class="schitte-center">
     <img src="https://schitte.github.io/triangle.png">
     <h1>Schitte Man Sky</h1>
@@ -31,10 +32,11 @@
   <div class="schitte-center">
     <a href="https://www.patreon.com/schitte">If you liked this game, please give us $60 for it</a>
   </div>
+  <hr />
   <script src="../index.js"></script>
   <script>
     var currentSchittePlanet = "Earth";
-    var possibleSchitteFinds = ["Rock", "Cow", "Bird", "Tree", "Cloud", "Grass", "Building"];
+    var possibleSchitteFinds = ["Rock", "Cow", "Bird", "Tree", "Cloud", "Grass", "Building", "Person"];
     var SchitteCharacteristic1 = ["Freezing", "Cold", "Cool", "Temperate", "Lukewarm", "Warm", "Hot", "Burning"];
     var SchitteCharacteristic2 = ["Microscopic", "Miniscule", "Tiny", "Small", "Big", "Large", "Huge", "Enormous"];
     //0~2^16-1 possible moons
@@ -61,7 +63,7 @@
       var schitteFind = currentSchittePlanet + " ";
       schitteFind += possibleSchitteFinds[Math.floor(8*Math.random())];
       document.getElementById("schitte-planet-find").innerHTML = schitteFind;
-    }, 1000);
+    }, 2000);
   </script>
 </body>
 </html>
