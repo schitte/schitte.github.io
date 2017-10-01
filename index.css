@@ -63,3 +63,7 @@ html, body {
   width: 25vw;
   cursor: pointer;
 }
+
+.schitte-center {
+  text-align: center;
+}
