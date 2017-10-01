@@ -59,6 +59,7 @@
     setInterval(function() {
       var schitteFind = currentSchittePlanet + " ";
       schitteFind += possibleSchitteFinds[Math.floor(8*Math.random())];
+      document.getElementbyId("schitte-planet-find").innerHTML = schitteFind;
     }, 1000);
   </script>
 </body>
