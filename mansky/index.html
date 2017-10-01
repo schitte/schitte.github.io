@@ -23,7 +23,7 @@
   <hr />
   <div class="schitte-center">
     <p id="schitte-planet-name">Welcome to Earth. Click the button below to start your travel</p>
-    <span>While exploring, you came across:</span><span id="schitte-planet-find"></span>
+    <p><span>While exploring, you came across:</span><span id="schitte-planet-find"></span></p>
     <button onclick="jump()">Travel to a new cool planet</button>
   </div>
   <div class="schitte-center">
@@ -52,15 +52,13 @@
       schitteMessage += " planet with ";
       schitteMessage += Math.floor(6969*Math.random());
       schitteMessage += " moons!";
-      document.getElemenyById("schitte-planet-name").innerHTML = schitteMessage;
+      document.getElementById("schitte-planet-name").innerHTML = schitteMessage;
     }
     
-    var schitteExploration = setInterval(function() {
+    setInterval(function() {
       var schitteFind = currentSchittePlanet + " ";
       schitteFind += possibleSchitteFinds[Math.floor(8*Math.random())];
     }, 1000);
-    
-    schitteExploration();
   </script>
 </body>
 </html>
