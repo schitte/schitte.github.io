@@ -4,8 +4,8 @@
 //  title(string): e.g. "Season 1 Episode 1"
 //  realease(string): e.g. "Released: 2017-09-17"
 //  slides(array[string]): episode title string e.g. "S1E1"
-//    as well as "soon", "previously", "presents", and "title"
-//    play and end slides are automatically included, and should not be in the array.
+//    as well as "soon", "previously", "presents", "play", and "title"
+//    end slides are automatically included, and should not be in the array.
 
 var buildContent = function(vnode) {
   var arr = [];
