@@ -71,5 +71,5 @@ console.log(store.getState());
 
 //log every state
 var unsubscribe = store.subscribe(function() {
-    console.log(store.getState());
+    return console.log(store.getState());
 });
