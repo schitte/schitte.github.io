@@ -36,7 +36,7 @@ var buildContent = function(vnode) {
       } else {
           arr.push(m("img.schitte-gallery-overlay", {
               src: "episodes/" + slide + ".png",
-              id: vnode.attrs.id + "main" + title,
+              id: vnode.attrs.id + "main" + slide,
               onclick: shiftSlide(vnode.attrs.id)
           }));
       }
