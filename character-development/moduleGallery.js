@@ -35,7 +35,7 @@ var buildContent = function(vnode) {
           }));
       } else {
           arr.push(m("img.schitte-gallery-overlay", {
-              src: "episodes/" + title + ".png",
+              src: "episodes/" + slide + ".png",
               id: vnode.attrs.id + "main" + title,
               onclick: shiftSlide(vnode.attrs.id)
           }));
