@@ -5,19 +5,19 @@ var initialState = {
         id: "S1E1",
         title: "Season 1 Episode 1",
         release: "Released: 2017-09-17",
-        slides: ["S1E1", "title", "presents"]
+        slides: ["S1E1", "title", "presents", "play"]
     },
     {
         id: "S1E2",
         title: "Season 1 Episode 2",
         release: "Released: 2017-09-24",
-        slides: ["S1E2", "S1E1", "title", "presents", "S1E1", "previously"]
+        slides: ["S1E2", "S1E1", "title", "presents", "S1E1", "previously", "play"]
     },
     {
         id: "S1E3",
         title: "Season 1 Episode 3",
         release: "Released: 2017-10-01",
-        slides: ["S1E3", "S1E2", "S1E1", "title", "presents", "S1E2", "S1E1", "previously"]
+        slides: ["S1E3", "S1E2", "S1E1", "title", "presents", "S1E2", "S1E1", "previously", "play"]
     }    
     ]
 };
