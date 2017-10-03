@@ -16,6 +16,7 @@ var buildContent = function(vnode) {
             src: "play.png",
             id: vnode.attrs.id + "play",
             onclick: shiftSlide(vnode.attrs.id)
+          }));
       } else if(slide === "soon") {
           arr.push(m("img.schitte-gallery-overlay", {
               src: "soon.png"
