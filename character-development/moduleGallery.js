@@ -10,7 +10,7 @@
 var buildContent = function(vnode) {
   var arr = [];
   
-  vnode.slides.map(function(slide) {
+  vnode.attrs.slides.map(function(slide) {
       if(slide === "soon") {
           arr.push(m("img.schitte-gallery-overlay", {
               src: "soon.png"
