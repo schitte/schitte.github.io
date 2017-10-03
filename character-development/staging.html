@@ -20,38 +20,28 @@
   <script src="https://schitte.github.io/character-development/state.js"></script>
   <script src="https://schitte.github.io/character-development/moduleGallery.js"></script>
   <script>
-//     m.render(document.body, [
-//       m(moduleNav),
-//       m("div.schitte-gallery", [
-//         m(moduleGallery, {
-//           id: "S1E1",
-//           title: "Season 1 Episode 1",
-//           release: "Released: 2017-09-17",
-//           soon: false,
-//           premier: true,
-//           previous: null,
-//           main: ["S1E1"]
-//         }),
-//         m(moduleGallery, {
-//           id: "S1E1",
-//           title: "Season 1 Episode 1",
-//           release: "Released: 2017-09-17",
-//           soon: false,
-//           premier: true,
-//           previous: null,
-//           main: ["S1E1"]
-//         }),
-//         m(moduleGallery, {
-//           id: "S1E1",
-//           title: "Season 1 Episode 1",
-//           release: "Released: 2017-09-17",
-//           soon: false,
-//           premier: true,
-//           previous: null,
-//           main: ["S1E1"]
-//         })
-//       ])
-//     ]);
+    //get initial state
+    var initialState = store.getState();
+
+    //render function
+    var masterRender = function(state) {
+        m.render(document.body, [
+            m(moduleNav),
+            m("div.schitte-gallery", [
+                state.episodes.map(function(episode){
+                    return m(moduleGallery, episode);
+                })
+            ])
+        ]);    
+    };
+
+    //render with initial state
+    masterRender(initialState);
+
+    //subscription returns function for unsubscribing
+    var unsubscribe = store.subscribe(function() {
+        return masterRender(store.getState());
+    });
   </script>
 </body>
 </html>
