@@ -35,7 +35,7 @@ function slideReducer(state, action) {
                     episodes: state.episodes.map(function(episode, index) {
                         if(episode.id === action.episodeID) {
                             return Object.assign({}, episode, {
-                                slides: state.episodes[index].slides.shift()
+                                slides: state.episodes[index].slides.slice(0, -1)
                             });
                         } else {
                             return episode;
