@@ -32,7 +32,7 @@ function slideReducer(state, action) {
         switch(action.type) {
             case REMOVE_SLIDE: 
                 return Object.assign({}, state, {
-                    episodes: state.episodes.map(function(episode, index) {
+                    episodes: [state.episodes.map(function(episode, index) {
                         if(episode.id === action.episodeID) {
                             return Object.assign({}, episode, {
                                 slides: episode.slides.slice(0, -1)
@@ -40,7 +40,7 @@ function slideReducer(state, action) {
                         } else {
                             return episode;
                         }
-                    })
+                    })]
                 });
         
             default: 
