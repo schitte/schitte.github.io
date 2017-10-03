@@ -11,7 +11,12 @@ var buildContent = function(vnode) {
   var arr = [];
   
   vnode.attrs.slides.map(function(slide) {
-      if(slide === "soon") {
+      if(slide === "play") {
+          arr.push(m("img.schitte-gallery-overlay", {
+            src: "play.png",
+            id: vnode.attrs.id + "play",
+            onclick: shiftSlide(vnode.attrs.id)
+      } else if(slide === "soon") {
           arr.push(m("img.schitte-gallery-overlay", {
               src: "soon.png"
           }));
@@ -42,12 +47,6 @@ var buildContent = function(vnode) {
       }
   });
 
-  //play
-  arr.push(m("img.schitte-gallery-overlay", {
-    src: "play.png",
-    id: vnode.attrs.id + "play",
-    onclick: shiftSlide(vnode.attrs.id)
-  }));  
   //end
   arr.push(m("img.schitte-gallery-img", {
     src: "end.png"
