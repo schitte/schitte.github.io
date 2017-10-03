@@ -3,67 +3,55 @@
 //  id(string): unique id for the group for selector id. e.g. "S1E1"
 //  title(string): e.g. "Season 1 Episode 1"
 //  realease(string): e.g. "Released: 2017-09-17"
-//  soon(bool): coming soon locking
-//  premier(bool): true for first episode. disables previous. 
-//  previous(array[string]): episode title string e.g. "S1E1"
-//  main(array[string]): episode title string e.g. "S1E1"
+//  slides(array[string]): episode title string e.g. "S1E1"
+//    as well as "soon", "previously", "presents", and "title"
+//    play and end slides are automatically included, and should not be in the array.
+
 var buildContent = function(vnode) {
   var arr = [];
-  console.log(vnode);
-  //main episodes
-  vnode.attrs.main.reverse().map(function(title) {
-      console.log('main reduce');
-      arr.push(m("img.schitte-gallery-overlay", {
-          src: "episodes/" + title + ".png",
-          id: vnode.attrs.id + "main" + title,
-          onclick: removeEl(vnode.attrs.id + "main" + title)
-      }));
-  });
-
-  console.log("removeEL(\'" + vnode.attrs.id + "title" + "\')");
-  //title
-  arr.push(m("img.schitte-gallery-overlay", {
-      src: "title.png",
-      id: vnode.attrs.id + "title",
-      onclick: removeEl(vnode.attrs.id + "title")
-  }));
-
-  //presents
-  arr.push(m("img.schitte-gallery-overlay", {
-      src: "presents.png",
-      id: vnode.attrs.id + "presents",
-      onclick: removeEl(vnode.attrs.id + "presents")
-  }));
-
-  if(!vnode.attrs.premier) {
-      //previous
-      vnode.attrs.previous.reverse().map(function(title) {
+  
+  vnode.slides.map(function(slide) {
+      if(slide === "soon") {
+          arr.push(m("img.schitte-gallery-overlay", {
+              src: "soon.png"
+          }));
+      } else if (slide === "previously") {
+          arr.push(m("img.schitte-gallery-overlay", {
+              src: "previously.png",
+              id: vnode.attrs.id + "previously",
+              onclick: shiftSlide(vnode.attrs.id)
+          }));
+      } else if (slide === "presents") {
+          arr.push(m("img.schitte-gallery-overlay", {
+              src: "presents.png",
+              id: vnode.attrs.id + "presents",
+              onclick: shiftSlide(vnode.attrs.id + "presents")
+          }));
+      } else if (slide === "title") {
+          arr.push(m("img.schitte-gallery-overlay", {
+              src: "title.png",
+              id: vnode.attrs.id + "title",
+              onclick: shiftSlide(vnode.attrs.id)
+          }));
+      } else {
           arr.push(m("img.schitte-gallery-overlay", {
               src: "episodes/" + title + ".png",
               id: vnode.attrs.id + "main" + title,
-              onclick: removeEl(vnode.attrs.id + "main" + title)
+              onclick: shiftSlide(vnode.attrs.id)
           }));
-      });
-      //previously
-      arr.push(m("img.schitte-gallery-overlay", {
-          src: "presents.png",
-          id: vnode.attrs.id + "presents",
-          onclick: removeEl(vnode.attrs.id + "presents")
-      }));
-  }
+      }
+  });
 
-  if(vnode.attrs.soon) {
-      //soon
-      arr.push(m("img.schitte-gallery-overlay", {
-          src: "soon.png"
-      }));
-  }
-
+  //play
+  arr.push(m("img.schitte-gallery-overlay", {
+    src: "play.png",
+    id: vnode.attrs.id + "play",
+    onclick: shiftSlide(vnode.attrs.id)
+  }));  
   //end
   arr.push(m("img.schitte-gallery-img", {
-      src: "end.png"
+    src: "end.png"
   }));
-
   //title
   arr.push(m("p.schitte-gallery-title", "Schitte Character Development"));
 
