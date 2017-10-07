@@ -74,5 +74,6 @@ var unsubscribe = store.subscribe(function() {
 
 //dispatch action on function call
 function shiftSlide(episodeID) {
+    console.log("Dispatching Action");
     store.dispatch(removeSlide(episodeID));
 }
