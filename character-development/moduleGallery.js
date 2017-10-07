@@ -13,35 +13,35 @@ var buildContent = function(vnode) {
   vnode.attrs.slides.map(function(slide) {
       if(slide === "play") {
           arr.push(m("img.schitte-gallery-overlay", {
-            src: "play.png",
+            src: "https://schitte.github.io/character-development/play.png",
             id: vnode.attrs.id + "play"
 //            onclick: "shiftSlide(" + vnode.attrs.id + ")"
           }));
       } else if(slide === "soon") {
           arr.push(m("img.schitte-gallery-overlay", {
-              src: "soon.png"
+              src: "https://schitte.github.io/character-development/soon.png"
           }));
       } else if (slide === "previously") {
           arr.push(m("img.schitte-gallery-overlay", {
-              src: "previously.png",
+              src: "https://schitte.github.io/character-development/previously.png",
               id: vnode.attrs.id + "previously"
 //              onclick: "shiftSlide(" + vnode.attrs.id + ")"
           }));
       } else if (slide === "presents") {
           arr.push(m("img.schitte-gallery-overlay", {
-              src: "presents.png",
+              src: "https://schitte.github.io/character-development/presents.png",
               id: vnode.attrs.id + "presents"
 //              onclick: "shiftSlide(" + vnode.attrs.id + ")"
           }));
       } else if (slide === "title") {
           arr.push(m("img.schitte-gallery-overlay", {
-              src: "title.png",
+              src: "https://schitte.github.io/character-development/title.png",
               id: vnode.attrs.id + "title"
 //              onclick: "shiftSlide(" + vnode.attrs.id + ")"
           }));
       } else {
           arr.push(m("img.schitte-gallery-overlay", {
-              src: "episodes/" + slide + ".png",
+              src: "https://schitte.github.io/character-development/episodes/" + slide + ".png",
               id: vnode.attrs.id + "main" + slide
 //              onclick: "shiftSlide(" + vnode.attrs.id + ")"
           }));
@@ -50,7 +50,7 @@ var buildContent = function(vnode) {
 
   //end
   arr.push(m("img.schitte-gallery-img", {
-    src: "end.png"
+    src: "https://schitte.github.io/character-development/end.png"
   }));
   //title
   arr.push(m("p.schitte-gallery-title", "Schitte Character Development"));
