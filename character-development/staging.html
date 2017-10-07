@@ -27,11 +27,11 @@
     var masterRender = function(state) {
         m.render(document.body, [
             m(moduleNav),
-            m("div.schitte-gallery", [
+            m("div.schitte-gallery", 
                 state.episodes.map(function(episode){
                     return m(moduleGallery, episode);
                 })
-            ])
+            )
         ]);    
     };
 
