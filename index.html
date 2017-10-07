@@ -1,3 +1,4 @@
+
 <html>
 <head>
   <!-- Global Site Tag (gtag.js) - Google Analytics -->
@@ -6,17 +7,37 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments)};
     gtag('js', new Date());
-
     gtag('config', 'UA-107369803-1');
   </script>
-  <link rel="stylesheet" type="text/css" href="index.css" />
+  <link rel="stylesheet" type="text/css" href="https://schitte.github.io/index.css" />
 </head>
 <body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.min.js"></script>
   <script src="https://cdn.rawgit.com/MithrilJS/mithril.js/master/mithril.js"></script>
   <script src="https://schitte.github.io/module/moduleNav.js"></script>
-  <script src="index.js"></script>
+  <script src="https://schitte.github.io/index.js"></script>
+  <script src="https://schitte.github.io/character-development/state.js"></script>
+  <script src="https://schitte.github.io/character-development/moduleGallery.js"></script>
   <script>
-    m.render(document.body, m(moduleNav));
+    //get initial state
+    var initialState = store.getState();
+    //render function
+    var masterRender = function(state) {
+        m.render(document.body, [
+            m(moduleNav),
+            m("div.schitte-gallery", 
+                state.episodes.map(function(episode){
+                    return m(moduleGallery, episode);
+                })
+            )
+        ]);    
+    };
+    //render with initial state
+    masterRender(initialState);
+    //subscription returns function for unsubscribing
+    var unsubscribe = store.subscribe(function() {
+        return masterRender(store.getState());
+    });
   </script>
 </body>
 </html>
