@@ -24,7 +24,13 @@ var initialState = {
         title: "Season 1 Episode 4",
         release: "Released: 2017-10-08",
         slides: ["S1E4", "S1E3", "S1E2", "S1E1", "title", "presents", "S1E3", "S1E2", "S1E1", "previously", "play"]
-    },        
+    },
+    {
+        id: "S1E5",
+        title: "Season 1 Episode 5",
+        release: "Released: 2017-10-15",
+        slides: ["S1E5", "S1E4", "S1E3", "S1E2", "S1E1", "title", "presents", "S1E4", "S1E3", "S1E2", "S1E1", "previously", "play", "soon"]
+    }
     ]
 };
 
