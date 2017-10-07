@@ -87,7 +87,7 @@ var unsubscribe = store.subscribe(function() {
 //dispatch action on function call
 function shiftSlide(episodeID) {
     if(episodeID === "soon") {
-        alert("Coming Soon!);
+        alert("Coming Soon!");
     } else {
         store.dispatch(removeSlide(episodeID));    
     }
