@@ -15,7 +15,7 @@ var buildContent = function(vnode) {
           arr.push(m("img.schitte-gallery-overlay", {
             src: "play.png",
             id: vnode.attrs.id + "play",
-            onclick: shiftSlide(vnode.attrs.id)
+            onclick: "shiftSlide(" + vnode.attrs.id + ")"
           }));
       } else if(slide === "soon") {
           arr.push(m("img.schitte-gallery-overlay", {
@@ -25,25 +25,25 @@ var buildContent = function(vnode) {
           arr.push(m("img.schitte-gallery-overlay", {
               src: "previously.png",
               id: vnode.attrs.id + "previously",
-              onclick: shiftSlide(vnode.attrs.id)
+              onclick: "shiftSlide(" + vnode.attrs.id + ")"
           }));
       } else if (slide === "presents") {
           arr.push(m("img.schitte-gallery-overlay", {
               src: "presents.png",
               id: vnode.attrs.id + "presents",
-              onclick: shiftSlide(vnode.attrs.id + "presents")
+              onclick: "shiftSlide(" + vnode.attrs.id + ")"
           }));
       } else if (slide === "title") {
           arr.push(m("img.schitte-gallery-overlay", {
               src: "title.png",
               id: vnode.attrs.id + "title",
-              onclick: shiftSlide(vnode.attrs.id)
+              onclick: "shiftSlide(" + vnode.attrs.id + ")"
           }));
       } else {
           arr.push(m("img.schitte-gallery-overlay", {
               src: "episodes/" + slide + ".png",
               id: vnode.attrs.id + "main" + slide,
-              onclick: shiftSlide(vnode.attrs.id)
+              onclick: "shiftSlide(" + vnode.attrs.id + ")"
           }));
       }
   });
