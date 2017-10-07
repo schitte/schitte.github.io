@@ -62,7 +62,7 @@ function removeSlide(episodeID) {
 }
 
 //create store
-var store = Redux.createStore(slideReducer, initialState);
+var store = Redux.createStore(slideReducer, initialState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 //log initial state
 console.log(store.getState());
