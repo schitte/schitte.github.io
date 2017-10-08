@@ -20,23 +20,22 @@
   <script>
     //get initial state
     var initialState = store.getState();
-    //render function
-    var masterRender = function(state) {
-        m.render(document.body, [
-            m(moduleNav),
-            m("div.schitte-gallery", 
-                state.episodes.map(function(episode){
-                    return m(moduleGallery, episode);
-                })
-            )
-        ]);    
-    };
-    //render with initial state
-    masterRender(initialState);
-    //subscription returns function for unsubscribing
-    var unsubscribe = store.subscribe(function() {
-        return masterRender(store.getState());
-    });
+    //master component
+    //input vnode: state
+    var masterComponent = {
+      view: function(vnode) {
+        return m([
+          m(moduleNav),
+          m("div.schitte-gallery",
+            vnode.episodes.map(function(episode) {
+              return m(moduleGallery, episode);
+            })  
+          )
+        ])
+      }
+    }
+    //mount
+    m.mount(document.body, masterComponent);
   </script>
 </body>
 </html>
