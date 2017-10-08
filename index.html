@@ -24,14 +24,14 @@
     //input vnode: state
     var masterComponent = {
       view: function(vnode) {
-        return m([
+        return [
           m(moduleNav),
           m("div.schitte-gallery",
             vnode.attrs.episodes.map(function(episode) {
               return m(moduleGallery, episode);
             })  
           )
-        ])
+        ];
       }
     }
     //mount
