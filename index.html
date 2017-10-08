@@ -35,7 +35,15 @@
       }
     }
     //mount
-    m.mount(document.body, masterComponent, initialState);
+    m.mount(document.body, {
+      view: function() {
+        return m(masterComponent, initialState);
+      }    
+    });
+    //subscribe
+    var unsubscribe = store.subscribe(function() {
+      m.redraw();
+    });
   </script>
 </body>
 </html>
