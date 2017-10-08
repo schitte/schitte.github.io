@@ -27,7 +27,7 @@
         return m([
           m(moduleNav),
           m("div.schitte-gallery",
-            vnode.episodes.map(function(episode) {
+            vnode.attrs.episodes.map(function(episode) {
               return m(moduleGallery, episode);
             })  
           )
