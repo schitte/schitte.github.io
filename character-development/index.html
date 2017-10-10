@@ -8,35 +8,85 @@
     gtag('js', new Date());
     gtag('config', 'UA-107369803-1');
   </script>
-  <link rel="stylesheet" type="text/css" href="https://schitte.github.io/index.css" />
+  <link rel="stylesheet" type="text/css" href="../index.css" />
+  <title>Schitte Character Development</title>
 </head>
 <body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.min.js"></script>
-  <script src="https://cdn.rawgit.com/MithrilJS/mithril.js/master/mithril.js"></script>
-  <script src="https://schitte.github.io/module/moduleNav.js"></script>
-  <script src="https://schitte.github.io/index.js"></script>
-  <script src="https://schitte.github.io/character-development/state.js"></script>
-  <script src="https://schitte.github.io/character-development/moduleGallery.js"></script>
-  <script>
-    //get initial state
-    var initialState = store.getState();
-    //render function
-    var masterRender = function(state) {
-        m.render(document.body, [
-            m(moduleNav),
-            m("div.schitte-gallery", 
-                state.episodes.map(function(episode){
-                    return m(moduleGallery, episode);
-                })
-            )
-        ]);    
-    };
-    //render with initial state
-    masterRender(initialState);
-    //subscription returns function for unsubscribing
-    var unsubscribe = store.subscribe(function() {
-        return masterRender(store.getState());
-    });
-  </script>
+  <div class="schitte-nav">
+    <img class="schitte-nav-logo"></img>
+    <span class="schitte-nav-title"></span>
+    <div class="schitte-nav-buttons">
+      <button class="schitte-nav-button" onclick="window.open('https://sites.google.com/view/schitteindustries/home','_blank')">Home</button>
+      <button class="schitte-nav-button" onclick="window.open('https://sites.google.com/view/schitteindustries/schitte-products','_blank')">Products</button>
+      <button class="schitte-nav-button" onclick="window.open('https://sites.google.com/view/schitteindustries/clash-of-cash','_blank')">Clash of Cash</button>
+      <button class="schitte-nav-button" onclick="window.open('https://sites.google.com/view/schitteindustries/sellout','_blank')">Sellout</button>
+      <button class="schitte-nav-button" onclick="window.open('https://sites.google.com/view/schitteindustries/disclaimer','_blank')">Disclaimer</button>
+    </div>
+  </div>
+  <div class="schitte-gallery">
+    <a class="schitte-gallery-item">
+      <img src="episodes/S1E1.png"  class="schitte-gallery-overlay" id="s1e1s4" onclick="removeEl('s1e1s4')"></img>
+      <img src="title.png"  class="schitte-gallery-overlay" id="s1e1s3" onclick="removeEl('s1e1s3')"></img>
+      <img src="presents.png"  class="schitte-gallery-overlay" id="s1e1s2" onclick="removeEl('s1e1s2')"></img>      
+      <img src="play.png"  class="schitte-gallery-overlay" id="s1e1s1" onclick="removeEl('s1e1s1')"></img>
+    
+      <img src="end.png" class="schitte-gallery-img"></img>
+
+      <p class="schitte-gallery-title">Schitte Character Development</p>
+      <p>Season 1 Episode 1</p>
+      <p>Released: 2017-09-17</p>
+    </a>
+    <a class="schitte-gallery-item">
+      <img src="episodes/S1E2.png"  class="schitte-gallery-overlay" id="s1e2s7" onclick="removeEl('s1e2s7')"></img>
+      <img src="episodes/S1E1.png"  class="schitte-gallery-overlay" id="s1e2s6" onclick="removeEl('s1e2s6')"></img> 
+      <img src="title.png"  class="schitte-gallery-overlay" id="s1e2s5" onclick="removeEl('s1e2s5')"></img>
+      <img src="presents.png"  class="schitte-gallery-overlay" id="s1e2s4" onclick="removeEl('s1e2s4')"></img>
+      <img src="episodes/S1E1.png"  class="schitte-gallery-overlay" id="s1e2s3" onclick="removeEl('s1e2s3')"></img>
+      <img src="previously.png"  class="schitte-gallery-overlay" id="s1e2s2" onclick="removeEl('s1e2s2')"></img>
+      <img src="play.png"  class="schitte-gallery-overlay" id="s1e2s1" onclick="removeEl('s1e2s1')"></img>
+
+      <img src="end.png" class="schitte-gallery-img"></img>
+
+      <p class="schitte-gallery-title">Schitte Character Development</p>
+      <p>Season 1 Episode 2</p>
+      <p>Released: 2017-09-24</p>
+    </a>
+    <a class="schitte-gallery-item">
+      <img src="episodes/S1E3.png"  class="schitte-gallery-overlay" id="s1e3s9" onclick="removeEl('s1e3s9')"></img>
+      <img src="episodes/S1E2.png"  class="schitte-gallery-overlay" id="s1e3s8" onclick="removeEl('s1e3s8')"></img>
+      <img src="episodes/S1E1.png"  class="schitte-gallery-overlay" id="s1e3s7" onclick="removeEl('s1e3s7')"></img> 
+      <img src="title.png"  class="schitte-gallery-overlay" id="s1e3s6" onclick="removeEl('s1e3s6')"></img>
+      <img src="presents.png"  class="schitte-gallery-overlay" id="s1e3s5" onclick="removeEl('s1e3s5')"></img>
+      <img src="episodes/S1E2.png"  class="schitte-gallery-overlay" id="s1e3s4" onclick="removeEl('s1e3s4')"></img>
+      <img src="episodes/S1E1.png"  class="schitte-gallery-overlay" id="s1e3s3" onclick="removeEl('s1e3s3')"></img>
+      <img src="previously.png"  class="schitte-gallery-overlay" id="s1e3s2" onclick="removeEl('s1e3s2')"></img>
+      <img src="play.png"  class="schitte-gallery-overlay" id="s1e3s1" onclick="removeEl('s1e3s1')"></img>
+
+      <img src="end.png" class="schitte-gallery-img"></img>
+      <p class="schitte-gallery-title">Schitte Character Development</p>
+      <p>Season 1 Episode 3</p>
+      <p>Released: 2017-10-01</p>
+    </a>
+    <a class="schitte-gallery-item">
+      <img src="episodes/S1E4.png"  class="schitte-gallery-overlay" id="s1e4s10" onclick="removeEl('s1e4s10')"></img>
+      <img src="episodes/S1E3.png"  class="schitte-gallery-overlay" id="s1e4s9" onclick="removeEl('s1e4s9')"></img>
+      <img src="episodes/S1E2.png"  class="schitte-gallery-overlay" id="s1e4s8" onclick="removeEl('s1e4s8')"></img>
+      <img src="episodes/S1E1.png"  class="schitte-gallery-overlay" id="s1e4s7" onclick="removeEl('s1e4s7')"></img> 
+      <img src="title.png"  class="schitte-gallery-overlay" id="s1e4s6" onclick="removeEl('s1e4s6')"></img>
+      <img src="presents.png"  class="schitte-gallery-overlay" id="s1e4s5" onclick="removeEl('s1e4s5')"></img>
+      <img src="episodes/S1E3.png"  class="schitte-gallery-overlay" id="s1e4s4A" onclick="removeEl('s1e4s4A')"></img>
+      <img src="episodes/S1E2.png"  class="schitte-gallery-overlay" id="s1e4s4" onclick="removeEl('s1e4s4')"></img>
+      <img src="episodes/S1E1.png"  class="schitte-gallery-overlay" id="s1e4s3" onclick="removeEl('s1e4s3')"></img>
+      <img src="previously.png"  class="schitte-gallery-overlay" id="s1e4s2" onclick="removeEl('s1e4s2')"></img>
+      <img src="play.png"  class="schitte-gallery-overlay" id="s1e4s1" onclick="removeEl('s1e4s1')"></img>
+
+      <img src="end.png" class="schitte-gallery-img"></img>
+      <p class="schitte-gallery-title">Schitte Character Development</p>
+      <p>Season 1 Episode 4</p>
+      <p>Released: 2017-10-08</p>
+    </a>
+  </div>
+  <script src="../index.js"></script>
+  <script src="moduleGallery.js"></script>
 </body>
 </html>
