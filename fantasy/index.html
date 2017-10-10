@@ -25,15 +25,19 @@
   </div>
   <hr />
   <div class="schitte-center">
-    <img src="sword.png">
+    <img src="swordLong.png">
     <h1>Schitte Fanal Fantasy XXX</h1>
     <h2>Bigger and Thicker Sword</h2>
     <h3>Uncensored</h3>
   </div>
   <hr />
   <div class="schitte-center">
-    <button>Grow Sword</button>
-    <button>Beat the Monster</button>
+    <button onclick="pump()">Grow Sword</button>
+    <button onclick="beat()">Beat the Monster</button>
+    <p id="dialogueP"></p>
+    <p id="swordP"></p>
+    <p id="beatP"></p>
+    
   </div>
   <hr />
   <div class="schitte-center">
@@ -42,6 +46,41 @@
   <hr />
   <script src="../index.js"></script>
   <script>
+    var dialogueEl = document.getElementById('dialogueP');
+    var swordEl = document.getElementById('swordEl');
+    var beatEl = document.getElementById('beatEl');
+    var swordLength = 2.0;
+    var beat = 0;
+    var displayDialogue = function(message) {
+      dialogueEl.innerHTML = message;
+    }
+    var displaySword = function() {
+      swordEl.innerHTML = "Length of your sword: "+swordLength+" inches"
+    }
+    var displayBeat = function() {
+      beatEl.innerHTML = "Progress: "+(100-beat)+"%";
+    }
+    var pump = function() {
+      displayDialogue("Wow it's getting bigger");
+      swordLength += 0.1;
+    }
+    var beat = function() {
+      beat += swordLength;
+      if(Math.random() >= 0.50) {
+        displayDialogue("Oh yeah, harder!");
+      } else {
+        displayDialogue("That's good! Faster!");
+      }
+      if(beat >= 100) {
+        alert("You've completed the Fantasy!");
+        beatEl.innerHTML = "Size Matters";
+      } else if(beat >= 70) {
+        alert("Almost There!");
+        displayBeat();
+      } else {
+        displayBeat();
+      }
+    }
   </script>
 </body>
 </html>
