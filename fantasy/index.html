@@ -72,10 +72,10 @@
       } else {
         displayDialogue("That's good! Faster!");
       }
-      if(beat >= 100) {
+      if(progress >= 100) {
         alert("You've completed the Fantasy!");
         beatEl.innerHTML = "Size Matters";
-      } else if(beat >= 70) {
+      } else if(progress >= 70) {
         alert("Almost There!");
         displayBeat();
       } else {
