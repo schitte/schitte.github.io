@@ -52,7 +52,7 @@ html, body {
   border: none;
 }
 
-.schitte-app-button {
+.schitte-app-button:hover {
   background-color: #9b5608;
   box-shadow: 0px 4px 2px;
 }
