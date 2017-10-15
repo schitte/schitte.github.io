@@ -54,12 +54,12 @@ html, body {
 
 .schitte-app-button:hover {
   background-color: #9b5608;
-  box-shadow: 0px -4px 2px #9b5608;
+  box-shadow: 0px 4px 2px #9b5608;
 }
 
 .schitte-app-button:active {
   background-color: #9b5608;
-  box-shadow: 0px 4px 2px #9b5608;  
+  box-shadow: 0px -4px 2px #9b5608;  
 }
 
 .schitte-gallery {
