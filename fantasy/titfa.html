@@ -1,0 +1,89 @@
+<html>
+<head>
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107369803-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments)};
+    gtag('js', new Date());
+    gtag('config', 'UA-107369803-1');
+  </script>
+  <link rel="stylesheet" type="text/css" href="../index.css" />
+  <title>Schitte Fanal Fantasy XXX Titfa Edition</title>
+</head>
+<body>
+  <div class="schitte-nav">
+    <img class="schitte-nav-logo"></img>
+    <span class="schitte-nav-title"></span>
+    <div class="schitte-nav-buttons">
+      <button class="schitte-nav-button" onclick="window.open('https://sites.google.com/view/schitteindustries/home','_blank')">Home</button>
+      <button class="schitte-nav-button" onclick="window.open('https://sites.google.com/view/schitteindustries/schitte-products','_blank')">Products</button>
+      <button class="schitte-nav-button" onclick="window.open('https://sites.google.com/view/schitteindustries/clash-of-cash','_blank')">Clash of Cash</button>
+      <button class="schitte-nav-button" onclick="window.open('https://sites.google.com/view/schitteindustries/sellout','_blank')">Sellout</button>
+      <button class="schitte-nav-button" onclick="window.open('https://sites.google.com/view/schitteindustries/disclaimer','_blank')">Disclaimer</button>
+    </div>
+  </div>
+  <hr />
+  <div class="schitte-center">
+    <img src="swordLong.png">
+    <h1>Schitte Fanal Fantasy XXX Titfa Edition</h1>
+    <h2>Bigger and Thicker Sword</h2>
+    <h3>Uncensored</h3>
+    <h3>Now with Titfa Rockhard!</h3>
+  </div>
+  <hr />
+  <div class="schitte-center">
+    <button onclick="pump()">Grow Sword</button>
+    <button onclick="beat()">Help Titfa</button>
+    <p id="dialogueP"></p>
+    <p id="swordP"></p>
+    <p id="beatP"></p>
+    
+  </div>
+  <hr />
+  <div class="schitte-center">
+    <a href="https://www.patreon.com/schitte">If you liked this game, please feed us</a>
+  </div>
+  <hr />
+  <script src="../index.js"></script>
+  <script>
+    var dialogueEl = document.getElementById('dialogueP');
+    var swordEl = document.getElementById('swordP');
+    var beatEl = document.getElementById('beatP');
+    var swordLength = 2.0;
+    var progress = 0;
+    var displayDialogue = function(message) {
+      dialogueEl.innerHTML = message;
+    }
+    var displaySword = function() {
+      swordEl.innerHTML = "Length of your sword: "+swordLength+" inches"
+    }
+    var displayBeat = function() {
+      beatEl.innerHTML = "Progress: "+(100-progress)+"%";
+    }
+    var pump = function() {
+      displayDialogue("Wow it's getting bigger");
+      swordLength += 0.1;
+      displaySword();
+    }
+    var beat = function() {
+      progress += swordLength;
+      if(Math.random() >= 0.50) {
+        displayDialogue("Oh yeah, harder!");
+      } else {
+        displayDialogue("That's good! Faster!");
+      }
+      if(progress >= 100) {
+        alert("You've completed the Titfa Rockhard mission!");
+        displayDialogue("Objective Satisfied");
+        beatEl.innerHTML = "That was so good! The size really mattered";
+      } else if(progress >= 70) {
+        alert("Almost There!");
+        displayBeat();
+      } else {
+        displayBeat();
+      }
+    }
+  </script>
+</body>
+</html>
