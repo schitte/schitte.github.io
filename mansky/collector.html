@@ -36,6 +36,7 @@
     <p id="schitte-planet-name">Welcome to Earth. Click the button below to start your travel</p>
     <p><span>While exploring, you came across:</span><span id="schitte-planet-find"></span></p>
     <button class="schitte-app-button" onclick="jump()">Travel to a new cool planet</button>
+    <p class="schitte-collector"></p>
   </div>
   <hr />
   <div class="schitte-center">
@@ -52,6 +53,7 @@
     }
     
     var collectionText = "";
+    var collectionEl = document.getElementById("schitte-collector");
     var showCollection = function() {
       collectionText += "Visited Worlds: " + data[8] + "\n";
       collectionText += "----" + "\n";
@@ -63,7 +65,7 @@
       collectionText += "Grass Found: " + data[5] + "\n";
       collectionText += "Buildings Found: " + data[6] + "\n";
       collectionText += "People Found: " + data[7] + "\n";
-      console.log(collectionText);
+      collectionEl.innerHTML = collectionText;
     }
     
     var currentSchittePlanet = "Earth";
@@ -72,6 +74,7 @@
     var SchitteCharacteristic2 = ["Microscopic", "Miniscule", "Tiny", "Small", "Big", "Large", "Huge", "Enormous"];
     //0~2^16-1 possible moons
     
+    var planetNameEl = document.getElementById("schitte-planet-name");
     var jump = function() {
       //New name
       currentSchittePlanet = "";
@@ -87,7 +90,7 @@
       schitteMessage += " planet with ";
       schitteMessage += Math.floor(6969*Math.random());
       schitteMessage += " moons!";
-      document.getElementById("schitte-planet-name").innerHTML = schitteMessage;
+      planetNameEl.innerHTML = schitteMessage;
       //increment world count
       data[8] = data[8] + 1;
       //rewrite collector
@@ -96,12 +99,12 @@
     
     var schitteFind = "";
     var schitteRoll = 0;
-    
+    var planetFindEl = document.getElementById("schitte-planet-find");
     setInterval(function() {
       schitteFind = " a(n) " + currentSchittePlanet + " ";
       schitteRoll = Math.floor(8*Math.random());
       schitteFind += possibleSchitteFinds[schitteRoll];
-      document.getElementById("schitte-planet-find").innerHTML = schitteFind;
+      planetFindEl.innerHTML = schitteFind;
       //increment find count
       data[schitteRoll] = data[schitteRoll] + 1;
       //rewrite collector
