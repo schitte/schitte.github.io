@@ -56,7 +56,7 @@
     var collectionEl = document.getElementById("schitte-collector");
     var showCollection = function() {
       //save data
-      localStorage.setItem("collection", data);
+      localStorage.setItem("collection", JSON.stringify(data));
       //update text
       collectionText = "Visited Worlds: " + data[8] + "<br />";
       collectionText += "----" + "<br />";
