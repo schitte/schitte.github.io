@@ -45,7 +45,7 @@
   <hr />
   <script src="../index.js"></script>
   <script>
-    var data = localStorage.getItem("collection");
+    var data = JSON.parse(localStorage.getItem("collection"));
     
     if (!data) {
       //rocks, cows, birds, trees, clouds, grass, buildings, people, worlds
