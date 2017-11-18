@@ -12,7 +12,8 @@
   <link rel="stylesheet" type="text/css" href="../index.css" />
   <style>
     span {
-      color: #FFD700;
+      color: #FF0000;
+      font-size: 4em;
     }
   </style>
   <title>Schitte Grand Larceny Auto 6</title>
@@ -34,6 +35,14 @@
     <h1>Schitte Grand Larceny Auto 6</h1>
     <img src="https://schitte.github.io/gla6/GLA6.png">
     <hr />
+    <div id="gameContents">
+      <p id="name"></p>
+      <p id="sex"></p>
+      <p id="charges"></p>
+      <p id="sentence"></p>
+      <button class="schitte-app-button" onclick="stealCar()">Steal a car</button>
+      <h2 id="textBox"></h2>
+    </div>
   </div>
   <hr />
   <div class="schitte-center">
@@ -42,6 +51,118 @@
   </div>
   <script src="../index.js"></script>
   <script>
+    var nameEl = document.getElementById("name");
+    var sexEl = document.getElementById("sex");
+    var chargeEl = document.getElementById("charges");
+    var sentenceEl = document.getElementById("sentence");
+    var textEl = document.getElementById("textBox");
+    var gameContents = document.getElementById("gameContents");
+    //run from police by 
+    //crimes increase police funding
+    //you cant run away. what do you think this is a game?
+    //wasted
+    var pendingCharge = [];
+    var isJailed = false;
+    var totalSentence = 0;
+    function splash(text) {
+      if (text === "INCARCERATED") {
+        gameContents.innerHTML = "<span class='splash' onclick='block(true)'>" + text + "</span>"
+        localStorage.setItem("status", "INCARCERATED");
+      } else {
+        gameContents.innerHTML = "<span class='splash' onclick='block(false)'>" + text + "</span>"
+        localStorage.setItem("status", "WASTED");
+      }
+    }
+    function block(jailed) {
+      if(jailed) {
+        alert("You can't do anything until your sentence ends because you're in jail.");
+        //alert("Join Schitte Club to bribe your way out of jail");
+      } else {
+        alert("You can't play anymore because you died. #YOLO");
+      }
+    }
+    function calculateSentence() {
+      totalSentence = 0;
+      for(var i=0; i < pendingCharge.length; i++) {
+        totalSentence += pendingCharge[i].sentence;
+      }
+    }
+    function stealCar() {
+      pendingCharge.push({"title": "Grand Theft Auto", "sentence": "10"});
+      alert("The car was reported stolen, and the police is pursuing you");
+      var willEvade = confirm("Press OK if you want to evade the police, or Cancel if you want to turn yourself in");
+      if (willEvade) {
+        evade();
+      } else {
+        pressCharges();
+      }
+    }
+    function pressCharges() {
+      alert("You have been arrested by the police");
+      calculateSentence();
+      if(totalSentence < 50) {
+        alert("After paying your bail, you have no money");
+        var run = confirm("Press OK to miss your court date and try to run away. Press Cancel to show up to court.");
+        if (run) {
+          pendingCharge.push({"title": "Failure to Appear in Court", "sentence": "5"});
+          alert("The judge has issued a warrant for your arrest. The police is in pursuit.");
+          var willEvade = confirm("Press OK if you want to evade the police, or Cancel if you want to turn yourself in");
+          if (willEvade) {
+            evade();
+          } else {
+            pressCharges();
+          }
+        } else {
+          court();
+        }
+      } else {
+        alert("Your crimes are too severe, so bail was denied. You will rot in jail until your sentencing");
+        court();
+      }
+    }
+    function court() {
+      alert("The district attorney offers you no plea deal");
+      calculateSentence();
+      alert("You are sentenced " + totalSentence + "years in jail.");
+      splash("INCARCERATED");  
+    }
+    function evade() {
+      alert("You can't run from your crimes forever, but you'll try.");
+      for(var i=0; i < pendingCharge.length; i++) {
+        var run = confirm("Press OK to keep running away. Press Cancel to give up");
+        if (!run) {
+          pressCharges();
+        };
+      }
+      alert("While running away, you hit a pedestrian");
+      pendingCharge.push({"title": "Vehicular Manslaughter", "sentence": "15"});
+      var run = confirm("Press OK to keep running away. Press Cancel to give up");
+      if (run) {
+        pendingCharge.push({"title": "Felony Hit and Run", "sentence": "7"});
+      } else {
+        pressCharges();
+      }
+      for(var i=0; i < pendingCharge.length; i++) {
+        var run = confirm("Press OK to keep running away. Press Cancel to give up");
+        if (!run) {
+          pressCharges();
+        };
+      }
+      alert("You fucking died");
+      splash("WASTED");
+    }
+    //
+    window.onload = function() {
+      var status = localStorage.getItem("status");
+      if(status === "WASTED") {
+        splash("WASTED");
+      } else if (status ==="INCARCERATED") {
+        splash("INCARCERATED");
+      }
+    };
+    //break out of prison
+    //start with more charge
+    //you can't play anymore. you are dead.
   </script>
 </body>
 </html>
