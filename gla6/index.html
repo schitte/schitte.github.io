@@ -10,6 +10,10 @@
   </script>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="../index.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/alertify.min.css"/>
+  <!-- Default theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/default.min.css"/>
   <style>
     span {
       color: #FF0000;
@@ -51,6 +55,7 @@
     <a href="https://www.patreon.com/schitte">If you liked this game, please feed us</a>
     <hr />
   </div>
+  <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/alertify.min.js"></script>
   <script src="../index.js"></script>
   <script>
     var nameEl = document.getElementById("name");
@@ -84,10 +89,10 @@
     }
     function block(jailed) {
       if(jailed) {
-        alert("You can't do anything until your sentence ends because you're in jail.");
+        alertify.alert("You can't do anything until your sentence ends because you're in jail.");
         //alert("Join Schitte Club to bribe your way out of jail");
       } else {
-        alert("You can't play anymore because you died. #YOLO");
+        alertify.alert("You can't play anymore because you died. #YOLO");
       }
     }
     function calculateSentence() {
@@ -98,7 +103,7 @@
     }
     function stealCar() {
       addCharge({"title": "Grand Theft Auto", "sentence": "10"});
-      alert("The car was reported stolen, and the police is pursuing you");
+      alertify.alert("The car was reported stolen, and the police is pursuing you");
       var willEvade = confirm("Press OK if you want to evade the police, or Cancel if you want to turn yourself in");
       if (willEvade) {
         evade();
@@ -107,7 +112,7 @@
       }
     }
     function pressCharges() {
-      alert("You have been arrested by the police");
+      alertify.alert("You have been arrested by the police");
       calculateSentence();
       if(totalSentence < 50) {
         alert("After paying your bail, you have no money");
@@ -125,25 +130,25 @@
           court();
         }
       } else {
-        alert("Your crimes are too severe, so bail was denied. You will rot in jail until your sentencing");
+        alertify.alert("Your crimes are too severe, so bail was denied. You will rot in jail until your sentencing");
         court();
       }
     }
     function court() {
-      alert("The district attorney offers you no plea deal");
+      alertify.alert("The district attorney offers you no plea deal");
       calculateSentence();
-      alert("You are sentenced " + totalSentence + "years in jail.");
+      alertify.alert("You are sentenced " + totalSentence + "years in jail.");
       splash("INCARCERATED");  
     }
     function evade() {
-      alert("You can't run from your crimes forever, but you'll try.");
+      alertify.alert("You can't run from your crimes forever, but you'll try.");
       for(var i=0; i < pendingCharge.length; i++) {
         var run = confirm("Press OK to keep running away. Press Cancel to give up");
         if (!run) {
           pressCharges();
         };
       }
-      alert("While running away, you hit a pedestrian");
+      alertify.alert("While running away, you hit a pedestrian");
       addCharge({"title": "Vehicular Manslaughter", "sentence": "15"});
       var run = confirm("Press OK to keep running away. Press Cancel to give up");
       if (run) {
@@ -157,7 +162,7 @@
           pressCharges();
         };
       }
-      alert("You fucking died");
+      alertify.alert("You fucking died");
       splash("WASTED");
     }
     window.onload = function() {
