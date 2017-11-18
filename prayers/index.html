@@ -57,6 +57,9 @@
     var addCondolence = function() {
       condolences++;
       condolenceEl.innerHTML = condolences + " Condolences Sent";
+      if(condolences%100===0) {
+        alert("Thank you for your service");
+      }
     }
     document.addEventListener('keydown', function(event) {
       if ((event.key === "f") || (event.key === "F")) {
