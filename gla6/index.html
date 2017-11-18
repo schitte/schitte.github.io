@@ -78,6 +78,7 @@
       for(var i=0; i < pendingCharge.length; i++) {
         chargeText += pendingCharge[i].title + "    " + pendingCharge[i].sentence + " years" + "\n";
       }
+      chargeEl.innerHTML = chargeText;
     }
     function splash(text) {
       if (text === "INCARCERATED") {
