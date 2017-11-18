@@ -72,6 +72,7 @@
     var isJailed = false;
     var totalSentence = 0;
     function addCharge(charge) {
+      console.log("addCharge");
       pendingCharge.push(charge);
       var chargeText = "";
       for(var i=0; i < pendingCharge.length; i++) {
@@ -96,6 +97,7 @@
       }
     }
     function calculateSentence() {
+      console.log("calculate");
       totalSentence = 0;
       for(var i=0; i < pendingCharge.length; i++) {
         totalSentence = totalSentence + Number(pendingCharge[i].sentence);
@@ -113,6 +115,7 @@
       );
     }
     function pressCharges() {
+      console.log("Press Charge");
       alertify.alert("You have been arrested by the police");
       calculateSentence();
       if(totalSentence < 50) {
@@ -138,12 +141,14 @@
       }
     }
     function court() {
+      console.log("Court");
       alertify.alert("The district attorney offers you no plea deal");
       calculateSentence();
       alertify.alert("You are sentenced " + totalSentence + "years in jail.");
       splash("INCARCERATED");  
     }
     function evade() {
+      console.log("Evade");
       alertify.alert("You can't run from your crimes forever, but you'll try.");
       for(var i=0; i < pendingCharge.length; i++) {
         alertify.confirm("Press OK to keep running away. Press Cancel to give up",
