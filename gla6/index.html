@@ -98,7 +98,7 @@
     function calculateSentence() {
       totalSentence = 0;
       for(var i=0; i < pendingCharge.length; i++) {
-        totalSentence += pendingCharge[i].sentence;
+        totalSentence = totalSentence + Number(pendingCharge[i].sentence);
       }
     }
     function stealCar() {
