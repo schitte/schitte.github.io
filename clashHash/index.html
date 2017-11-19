@@ -17,7 +17,7 @@
 </body>
 <script>
 var database = firebase.database();
-var dbRef = database.ref('data');
+var dbRef = database.ref('board');
 dbRef.once('value').then(function(snapshot) {
   console.log(snapshot.val());
 });
