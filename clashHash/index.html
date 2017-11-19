@@ -1,0 +1,25 @@
+<html>
+<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAcEcgrMg2-cSEwA9H_cLPoVHi0zbnmlnw",
+    authDomain: "clashofhash-841f6.firebaseapp.com",
+    databaseURL: "https://clashofhash-841f6.firebaseio.com",
+    projectId: "clashofhash-841f6",
+    storageBucket: "clashofhash-841f6.appspot.com",
+    messagingSenderId: "1061316126986"
+  };
+  firebase.initializeApp(config);
+</script>
+<body>
+
+</body>
+<script>
+var database = firebase.database();
+var dbRef = database.ref('data');
+dbRef.once('value').then(function(snapshot) {
+  console.log(snapshot);
+});
+</script>
+</html>
