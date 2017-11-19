@@ -47,6 +47,7 @@ function buildContent(data) {
   addGroup("India", "Pakistan", data.India, data.Pakistan);
   addGroup("Marvel", "DC", data.Marvel, data.DC);
   addGroup("Ferrari", "Lamborghini", data.Ferrari, data.Lamborghini);
+  contentEl.innerHTML = content;
 }
 function addGroup(title1, title2, hash1, hash2) {
   content += "<h2>Which sucks more?</h2>";
