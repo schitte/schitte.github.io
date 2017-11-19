@@ -68,8 +68,8 @@ function buildContent(data) {
   contentEl.innerHTML = content;
 }
 function addGroup(title1, title2, hash1, hash2) {
-  content += "<hr /><h2>Which sucks more?</h2>";
-  content += "<h3><a target='_blank' href='https://schitte.github.io/clashHash/" + title1 + "'>" + title1 + "</a> or <a target='_blank' href='https://schitte.github.io/clashHash/" + title2 + "'>" + title2 + "</a></h3>"; 
+  content += "<hr /><h3>Which sucks more?</h3>";
+  content += "<h2><a target='_blank' href='https://schitte.github.io/clashHash/" + title1 + "'>" + title1 + "</a> or <a target='_blank' href='https://schitte.github.io/clashHash/" + title2 + "'>" + title2 + "</a></h2>"; 
   if(hash1 > hash2) {
     content += "<h3>" + title1 + " sucks more by " + (hash1-hash2) + " hashes! <span>" + title1 + " sucks!</span></h3>"
   } else if (hash2 > hash1) {
