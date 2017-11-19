@@ -22,6 +22,11 @@ gtag('config', 'UA-107369803-1');
 </script>
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../index.css" />
+<style>
+  span {
+    color: #FF0000;
+  }
+</style>
 <body>
   <div class="schitte-center">
     <h1>Schitte Clash of Hash</h1>
@@ -53,9 +58,9 @@ function addGroup(title1, title2, hash1, hash2) {
   content += "<hr /><h2>Which sucks more?</h2>";
   content += "<h3><a href='https://schitte.github.io/clashHash/" + title1 + "'>" + title1 + "</a> or <a href='https://schitte.github.io/clashHash/" + title2 + "'>" + title2 + "</a></h3>"; 
   if(hash1 > hash2) {
-    content += "<h3>" + title1 + " sucks more by " + (hash1-hash2) + " hashes! " + title1 + " sucks!</h3>"
+    content += "<h3>" + title1 + " sucks more by " + (hash1-hash2) + " hashes! <span>" + title1 + " sucks!</span></h3>"
   } else if (hash2 > hash1) {
-    content += "<h3>" + title2 + " sucks more by " + (hash2-hash1) + " hashes! " + title2 + " sucks!</h3>"
+    content += "<h3>" + title2 + " sucks more by " + (hash2-hash1) + " hashes! <span>" + title2 + " sucks!</span></h3>"
   } else {
     content += "<h3>Inconceivable. They're tied! Go cast your vote now!</h3>"
   }
