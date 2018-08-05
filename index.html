@@ -1,42 +1,11 @@
 <html>
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://schitte.github.io/index.css" />
+  <meta http-equiv="refresh" content="0" url="https://sites.google.com/view/schitteindustries/">
 </head>
 <body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.min.js"></script>
-  <script src="https://cdn.rawgit.com/MithrilJS/mithril.js/master/mithril.js"></script>
-  <script src="https://schitte.github.io/module/moduleNav.js"></script>
-  <script src="https://schitte.github.io/index.js"></script>
-  <script src="https://schitte.github.io/character-development/state.js"></script>
-  <script src="https://schitte.github.io/character-development/moduleGallery.js"></script>
-  <script>
-    //get initial state
-    var initialState = store.getState();
-    //master component
-    //input vnode: state
-    var masterComponent = {
-      view: function(vnode) {
-        return [
-          m(moduleNav),
-          m("div.schitte-gallery",
-            vnode.attrs.episodes.map(function(episode) {
-              return m(moduleGallery, episode);
-            })  
-          )
-        ];
-      }
-    }
-    //mount
-    m.mount(document.body, {
-      view: function() {
-        return m(masterComponent, store.getState());
-      }    
-    });
-    //subscribe
-    var unsubscribe = store.subscribe(function() {
-      m.redraw();
-    });
+  Redirecting...
+  <script type="text/javascript">
+    window.location.href = "https://sites.google.com/view/schitteindustries/"
   </script>
 </body>
 </html>
